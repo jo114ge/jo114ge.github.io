@@ -1,0 +1,42 @@
+---
+import { PORTFOLIO_NAME } from '../consts';
+const today = new Date();
+---
+
+<footer>
+	<div class="footer-content">
+		<div class="footer-text">
+			<p>&copy; {today.getFullYear()} {PORTFOLIO_NAME}. All rights reserved.</p>
+		</div>
+	</div>
+</footer>
+
+<style>
+	footer {
+		padding: 3rem 2rem;
+		background: #1e293b;
+		color: #e2e8f0;
+		text-align: center;
+	}
+	
+	.footer-content {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+	
+	.footer-text p {
+		margin: 0.5rem 0;
+	}
+	
+	.footer-subtitle {
+		color: #94a3b8;
+		font-style: italic;
+		font-size: 0.9rem;
+	}
+	
+	@media (max-width: 768px) {
+		footer {
+			padding: 2rem 1rem;
+		}
+	}
+</style>

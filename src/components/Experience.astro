@@ -1,0 +1,268 @@
+---
+const experiences = [
+  {
+    title: "Security Engineer",
+    company: "Seedtag",
+    period: "December 2023 – Present",
+    location: "Remote",
+    description: [
+      "Designed and enforced security architecture and cloud guardrails across GCP, integrating Security Command Center and IAM controls to align with compliance and threat models.",
+      "Conducted risk assessments for frontend and backend applications, generative AI, databases, infrastructure, middleware, and advanced advertising use cases.",
+      "Creation of guardrails through organizational policies.",
+      "Built threat models in collaboration with DevOps to prioritize remediations for cloud-native attack vectors and infrastructure misconfigurations.",
+      "Maintained endpoint visibility and coverage across macOS and Linux fleets using CrowdStrike, Kandji MDM, and Intune, ensuring adherence to baseline security requirements.",
+      "Creation of a process to manage vulnerabilities."
+    ],
+    technologies: ["GCP", "Security Command Center", "IAM", "CrowdStrike", "Kandji MDM", "Intune"],
+    status: "active"
+  },
+  {
+    title: "Incident Response Engineer",
+    company: "Deloitte",
+    period: "January 2022 – December 2023",
+    location: "Madrid, Spain",
+    description: [
+      "Investigated and remediated security incidents across cloud and hybrid environments using Splunk.",
+      "Creation and planning of guardrails in AWS and Azure through SCPs and organizational policies.",
+      "Responded to container threats, including cryptominers and webshells, in Kubernetes (GKE/EKS) and ECS environments.",
+      "Created incident response workflows integrated with AWS GuardDuty and GCP Security Command Center.",
+      "Use of Prisma Cloud and Cloudsploit to detect misconfigurations.",
+      "Worked with Netskope, CrowdStrike, Microsoft Defender, ThreatGrid, threat intelligence tools, and network security tools."
+    ],
+    technologies: ["Splunk", "AWS", "Azure", "Kubernetes", "Docker", "Prisma Cloud", "GuardDuty"],
+    status: "completed"
+  },
+  {
+    title: "Security Engineer",
+    company: "Admiral",
+    period: "May 2021 – June 2022",
+    location: "London, UK",
+    description: [
+      "Designed and deployed secure CI/CD pipelines in GitLab with integrated SAST, DAST, and dependency scanning, ensuring automated security enforcement.",
+      "Led threat modeling and DevSecOps initiatives to identify and mitigate risks in AWS and Kubernetes deployments.",
+      "Developed automation scripts and tools for threat detection, attack path analysis, and security posture assessments.",
+      "Design and implementation of Service Control Policies (SCPs) to enforce governance and security standards across an AWS Organization with over 200 accounts.",
+      "Conducted red and blue team simulations to test detection capabilities and resilience against targeted attacks."
+    ],
+    technologies: ["GitLab", "AWS", "Kubernetes", "SAST", "DAST", "SCPs", "DevSecOps"],
+    status: "completed"
+  },
+  {
+    title: "Cybersecurity Engineer",
+    company: "S2Grupo",
+    period: "January 2019 – May 2021",
+    location: "Valencia, Spain",
+    description: [
+      "Operated Elastic SIEM for threat detection, alert tuning, and log correlation across on-premises and cloud environments.",
+      "Created detection rules and enrichment logic mapped to MITRE ATT&CK for web, API, and lateral movement attacks.",
+      "Automated infrastructure hardening and incident response playbook execution using Ansible and Bash.",
+      "Led investigations involving targeted attacks on Linux systems and container workloads.",
+      "Implemented logging and monitoring solutions for Kubernetes and Docker-based workloads."
+    ],
+    technologies: ["Elastic SIEM", "MITRE ATT&CK", "Ansible", "Bash", "Linux", "Docker"],
+    status: "completed"
+  }
+];
+---
+
+<section class="experience" id="experience">
+  <div class="container">
+    <h2 class="section-title">Work Experience</h2>
+    <div class="timeline">
+      {experiences.map((exp, index) => (
+        <div class={`timeline-item ${exp.status}`}>
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+          </div>
+          <div class="timeline-content">
+            <div class="experience-header">
+              <h3 class="experience-title">{exp.title}</h3>
+              <span class="experience-company">{exp.company}</span>
+            </div>
+            <div class="experience-meta">
+              <span class="experience-period">{exp.period}</span>
+              <span class="experience-location">{exp.location}</span>
+            </div>
+            <ul class="experience-description">
+              {exp.description.map(desc => (
+                <li>{desc}</li>
+              ))}
+            </ul>
+            <div class="experience-technologies">
+              {exp.technologies.map(tech => (
+                <span class="tech-tag">{tech}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience {
+    padding: 5rem 0;
+    background: #0a0a0a;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #333;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: -2rem;
+    top: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .marker-dot {
+    width: 8px;
+    height: 8px;
+    background: #666;
+    border-radius: 50%;
+    border: 2px solid #0a0a0a;
+  }
+
+  .timeline-item.active .marker-dot {
+    background: #ffffff;
+  }
+
+  .timeline-content {
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+  }
+
+  .experience-header {
+    margin-bottom: 1rem;
+  }
+
+  .experience-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+  }
+
+  .experience-company {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #a0a0a0;
+  }
+
+  .experience-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .experience-period {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+
+  .experience-location {
+    color: #707070;
+    font-size: 0.9rem;
+  }
+
+  .experience-description {
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    list-style-type: disc;
+  }
+
+  .experience-description li {
+    margin-bottom: 0.75rem;
+    color: #d0d0d0;
+    line-height: 1.5;
+  }
+
+  .experience-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tech-tag {
+    background: #333;
+    color: #d0d0d0;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+
+  @media (max-width: 768px) {
+    .timeline {
+      padding-left: 1rem;
+    }
+
+    .timeline::before {
+      left: 0.5rem;
+    }
+
+    .timeline-item {
+      padding-left: 1.5rem;
+    }
+
+    .timeline-marker {
+      left: -1.5rem;
+    }
+
+    .timeline-content {
+      padding: 1.5rem;
+    }
+
+    .experience-meta {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+  }
+</style> 
